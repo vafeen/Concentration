@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.vafeen.concentration.domain"
+    namespace = "ru.vafeen.concentration.data"
     compileSdk = 35
 
     defaultConfig {
@@ -33,16 +33,11 @@ android {
 }
 
 dependencies {
-    api(project(":resources"))
+    implementation(project(":domain"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    //koin
-    api(libs.koin.android)
-    api(libs.koin.androidx.compose)
-    //gson
-    api(libs.gson)
 }

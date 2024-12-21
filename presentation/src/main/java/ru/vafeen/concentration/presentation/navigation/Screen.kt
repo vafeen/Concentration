@@ -9,4 +9,7 @@ internal sealed class Screen {
 
     @Serializable
     data object Settings : Screen()
+
+    @Serializable
+    data object Play : Screen()
 }
