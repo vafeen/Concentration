@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "ru.vafeen.concentration.domain"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 26
