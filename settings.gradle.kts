@@ -23,3 +23,4 @@ rootProject.name = "Concentration"
 include(":app")
 include(":presentation")
 include(":resources")
+include(":domain")

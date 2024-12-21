@@ -13,8 +13,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import ru.vafeen.concentration.presentation.ui.theme.suitableColor
-import ru.vafeen.universityschedule.resources.R
+import ru.vafeen.concentration.presentation.utils.suitableColor
+import ru.vafeen.concentration.resources.R
 
 /**
  * Компонент нижней панели навигации (Bottom Bar).
