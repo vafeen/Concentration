@@ -3,6 +3,7 @@ package ru.vafeen.concentration.app
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
+import ru.vafeen.concentration.data.di.base.mainDataModule
 import ru.vafeen.concentration.presentation.di.base.mainPresentationModule
 
 internal class App : Application() {
@@ -10,7 +11,7 @@ internal class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(mainPresentationModule)
+            modules(mainPresentationModule, mainDataModule)
         }
     }
 }
