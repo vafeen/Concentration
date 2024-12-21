@@ -1,23 +1,17 @@
 package ru.vafeen.concentration.presentation
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
 import ru.vafeen.concentration.presentation.navigation.BottomBarNavigator
 import ru.vafeen.concentration.presentation.navigation.Screen
-import kotlin.system.exitProcess
 
 /**
  * ViewModel для управления состоянием главной активности приложения.
@@ -51,8 +45,9 @@ internal class MainActivityViewModel(context: Context) : ViewModel(), BottomBarN
             navController?.currentBackStackEntryFlow?.collect { backStackEntry ->
                 val destination = backStackEntry.destination
                 when {
-                    destination.hasRoute(Screen.Main::class) -> _currentScreen.emit(Screen.Main)
-                    destination.hasRoute(Screen.Settings::class) -> _currentScreen.emit(Screen.Settings)
+                    destination.hasRoute<Screen.Main>() -> _currentScreen.emit(Screen.Main)
+                    destination.hasRoute<Screen.Settings>() -> _currentScreen.emit(Screen.Settings)
+                    destination.hasRoute<Screen.Play>() -> _currentScreen.emit(Screen.Play)
                 }
             }
         }
